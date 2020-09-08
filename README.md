@@ -9,12 +9,12 @@ You should have **curl** installed
 
 * On your Telegram client search (global) for BotFather
 * Send it a message */newbot* and start a conversation with it, namely:
-** Choose a bot name (ex: *Alerts*)
-** Choose a username ending with Bot (ex: *somethingBot*)
-** If everything is ok it will return a congratulations messages which includes a HTTP API Token. Something like this **123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11**
-** Save that Token to a secure and secret place
-** Go to the Global search again, and search for your boot (ex: *somethingBot*)
-** Send it a message */start* to it
+  * Choose a bot name (ex: *Alerts*)
+  * Choose a username ending with Bot (ex: *somethingBot*)
+  * If everything is ok it will return a congratulations messages which includes a HTTP API Token. Something like this **123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11**
+  * Save that Token to a secure and secret place
+  * Go to the Global search again, and search for your boot (ex: *somethingBot*)
+  * Send it a message */start* to it
 
 Now open a shell and clone this git repository
 ```bash
