@@ -2,27 +2,53 @@
 Alert by telegram every time a user login
 
 ### Installation
-1- On your Telegram client global search for BotFather
-2- Send them a a message /newbot and start a conversation with it, namely:
-3- Choose a bot name (ex: Alerts)
-4- Chose a username ending with Bot(ex: somethingBot)
-5- If everithing is ok it will return a congratulations messages which includes a HTTP API Token. Something like this 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
-6- Save that Token to a secure and secret place
-7- Go to the Global search again, and search for your boot (ex:somethingBot)
-8- Send it a message /start
-9- Got to ${HOME}/loginalert
-10- open another bash shell
-bash
-10- set an environment variable TOKEN="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11"
-TOKEN="<YOURTOKENHERE>"
-10- curl https://api.telegram.org/bot$TOKEN/getUpdates
 
+* On your Telegram client search (global) for BotFather
+* Send them a message /newbot and start a conversation with it, namely:
+*  Choose a bot name (ex: Alerts)
+* Choose a username ending with Bot(ex: somethingBot)
+* If everithing is ok it will return a congratulations messages which includes a HTTP API Token. Something like this 123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11
+* Save that Token to a secure and secret place
+* Go to the Global search again, and search for your boot (ex:somethingBot)
+* Send it a message /start
+
+Now open a shell and clone this git repository
+```bash
+git clone https://github.com/jvverde/loginalert ${HOME}/loginalert
+```
+Go to ${HOME}/loginalert
 ```bash
 cd ${HOME}/loginalert
-cp .env.sample to .env
+```
+Open another bash shell (by secure reasons)
+```bash
+bash
+```
+Set an environment variable TOKEN="123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11" (use the token saved above)
+```bash
+TOKEN="<YOURTOKENHERE>"
+```
+Check the new messages on your bot (You should have at lest one if you had sent one with /strat on previous step)
+```bash
+curl https://api.telegram.org/bot$TOKEN/getUpdates
+```
+You shoud receive a json object, something like this
+```bash
+...,"chat":{"id":822330591,"first_name":...
+```
+Take note of the value of field id of chat and copy .env.example to .env
 
-git clone https://github.com/jvverde/loginalert ${HOME}/loginalert
-cd ${HOME}/loginalert
-cp -a /etc/pam.d/sshd $HOME/loginalert/sshd.bak."$(date)" 
-echo "session optional pam_exec.so ${HOME}/loginalert/send-telegram.sh" |sudo tee -a /etc/pam.d/sshd
+```bash
+cp .env.esampe to .env
+```
+Edit .env with your prefered editor
+```bash
+vim .env
+```
+And set the variables TOKEN and CHAT_ID with the previous obtained values.
+Save the .env
+
+Now test it by send Hello message
+```bash
+./send-telegram.sh "Hello World"
 ```
