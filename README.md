@@ -41,7 +41,7 @@ You shoud receive a json object. Look for the something like this
 ```bash
 ...,"chat":{"id":822330591,"first_name":...
 ```
-(If you only obtain a message like this ```bash {"ok":true,"result":[]} ``` it means you haven't send a message yet. Go to client and send a *Hello* messages to your bot and try again)
+( If you only obtain a message like this ``` {"ok":true,"result":[]} ``` it means you haven't send a message yet. Go to client and send a *Hello* messages to your bot and try again )
 
 Take note of the value on field id of chat and then copy *.env.example* to *.env*
 
