@@ -8,13 +8,14 @@ You should have **curl** installed
 ### Installation
 
 * On your Telegram client search (global) for BotFather
-* Send it a message */newbot* and start a conversation with it, namely:
+* Send it a command */newbot* and start a conversation with it, namely:
   * Choose a bot name (ex: *Alerts*)
   * Choose a username ending with Bot (ex: *somethingBot*)
   * If everything is ok it will return a congratulations messages which includes a HTTP API Token. Something like this **123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11**
   * Save that Token to a secure and secret place
   * Go to the Global search again, and search for your boot (ex: *somethingBot*)
-  * Send it a message */start* to it
+  * Send it a command */start* to it
+  * Send any message to it (ex: Hello)
 
 Now open a shell and clone this git repository
 ```bash
@@ -32,15 +33,17 @@ Set an environment variable TOKEN="*123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11*" 
 ```bash
 TOKEN="POST_YOUR_TOKEN_HERE"
 ```
-Check the new messages on your bot (You should have at lest one if you had sent a */start* message on previous step)
+Check the new messages on your bot (You should have at least one if you had sent a message *Hello* on previous step)
 ```bash
 curl https://api.telegram.org/bot$TOKEN/getUpdates
 ```
-You shoud receive a json object, something like this
+You shoud receive a json object. Look for the something like this
 ```bash
 ...,"chat":{"id":822330591,"first_name":...
 ```
-Take note of the value of field id of chat and copy *.env.example* to *.env*
+(If you only obtain a message like this ```bash {"ok":true,"result":[]} ``` it means you haven't send a message yet. Go to client and send a *Hello* messages to your bot and try again)
+
+Take note of the value on field id of chat and then copy *.env.example* to *.env*
 
 ```bash
 cp .env.example to .env
