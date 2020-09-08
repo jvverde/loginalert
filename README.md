@@ -57,3 +57,14 @@ Now test it by send Hello message
 ./send-telegram.sh "Hello World"
 ```
 If everything is ok you should have received a Hello World on you telegram client
+
+You can exit from you bash to discart TOKEN variable from environment 
+```bash
+exit
+```
+Send a secon messages
+```bash
+./send-telegram.sh "My second message"
+```
+
+
