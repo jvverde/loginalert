@@ -14,7 +14,7 @@ You should have **curl** installed
   * If everything is ok it will return a congratulations messages which includes a HTTP API Token. Something like this **123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11**
   * Save that Token to a private and secure place
   * Go to the Global search again, and search for your boot (ex: *somethingBot*)
-  * Send it the command */start* to it
+  * Send it the command */start*
   * Send a message to it (ex: Hello)
 
 Now open a shell and clone this git repository
