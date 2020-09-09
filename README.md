@@ -43,18 +43,18 @@ You shoud receive a json object. Look for the something like this
 ```
 ( If you only obtain a message like this ``` {"ok":true,"result":[]} ``` it means you haven't send a message yet. Go to client and send a *Hello* messages to your bot and try again )
 
-Take note of the value on field id of chat and then copy *.env.example* to *.env*
+Take note of the value on field **id** of **chat** and then copy **.env.example** to **.env**
 
 ```bash
 cp .env.example to .env
 ```
-Edit *.env* with your prefered editor
+Edit **.env** with your prefered editor
 ```bash
 vim .env
 ```
 And set the variables *TOKEN* and *CHAT_ID* with the previous obtained values.
 
-Save the *.env*
+Save the **.env**
 
 Now test it by send a *Hello World* message
 ```bash
