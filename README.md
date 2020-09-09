@@ -8,14 +8,14 @@ You should have **curl** installed
 ### Installation
 
 * On your Telegram client search (global) for BotFather
-* Send it a command */newbot* and start a conversation with it, namely:
+* Send it the command */newbot* and start a conversation with it, namely:
   * Choose a bot name (ex: *Alerts*)
   * Choose a username ending with Bot (ex: *somethingBot*)
   * If everything is ok it will return a congratulations messages which includes a HTTP API Token. Something like this **123456:ABC-DEF1234ghIkl-zyx57W2v1u123ew11**
-  * Save that Token to a secure and secret place
+  * Save that Token to a private and secure place
   * Go to the Global search again, and search for your boot (ex: *somethingBot*)
-  * Send it a command */start* to it
-  * Send any message to it (ex: Hello)
+  * Send it the command */start* to it
+  * Send a message to it (ex: Hello)
 
 Now open a shell and clone this git repository
 ```bash
@@ -53,21 +53,24 @@ Edit *.env* with your prefered editor
 vim .env
 ```
 And set the variables *TOKEN* and *CHAT_ID* with the previous obtained values.
+
 Save the *.env*
 
-Now test it by send Hello message
+Now test it by send a *Hello World* message
 ```bash
 ./send-telegram.sh "Hello World"
 ```
-If everything is ok you should have received a Hello World on you telegram client
+If everything is ok you should have received a *Hello World* on you telegram client
 
-You can exit from you bash to discart TOKEN variable from environment 
+Now exit from you bash tin order o discart TOKEN variable from environment 
 ```bash
 exit
 ```
-Send a secon messages
+Send a second messages
 ```bash
 ./send-telegram.sh "My second message"
 ```
+
+Thats it!
 
 
